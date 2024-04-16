@@ -1,4 +1,9 @@
 #!/bin/bash
+#check this blog for more details
+#https://kasunsiyambalapitiya.medium.com/linux-play-a-warning-sound-when-your-laptop-battery-is-low-4aa23d5b279e
+#prerequisites to run cron
+#1.sudo apt-get install -y mpg123
+#2.sudo apt-get install -y upower
 # You need to export this environment variable in order to play sound from cron
 export XDG_RUNTIME_DIR="/run/user/1000"
 currentBatteryPercentage=$(upower -i /org/freedesktop/UPower/devices/DisplayDevice | grep "percentage" | awk '{print $2}')
