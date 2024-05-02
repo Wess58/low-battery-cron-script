@@ -4,6 +4,10 @@
 #prerequisites to run cron
 #1.sudo apt-get install -y mpg123
 #2.sudo apt-get install -y upower
+#to add to list of CRONS use :
+#crontab -e
+insert this lines to schedule the CRON , this CRON will execute every 5 minutes
+#*/5 * * * * bash /home/meliora/alarm-script.sh
 # You need to export this environment variable in order to play sound from cron
 export XDG_RUNTIME_DIR="/run/user/1000"
 currentBatteryPercentage=$(upower -i /org/freedesktop/UPower/devices/DisplayDevice | grep "percentage" | awk '{print $2}')
